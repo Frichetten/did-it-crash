@@ -4,7 +4,7 @@ const url = process.env['url'];
 
 exports.handler = function(event,context) {
   url.split(";").forEach(function(address) {
-    request.get(address, {timeout: 5000}, (err, response, body) => {
+    request.get(address, {timeout: 10000}, (err, response, body) => {
     
       if (response && response.statusCode == 200 && !err) {
         console.log(address+ ' is up');
